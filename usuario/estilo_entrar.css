@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  height: 100vh;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-image: linear-gradient(to right, #FAF6F6 30%,  #2A3E85 90%);
+  opacity: 0;
+  animation: aparecer 1s ease forwards;
+}
+
+/* Animação */
+@keyframes aparecer {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.logo_apae {
+  width: 350px; /* pode ajustar se quiser */
+  height: auto;
+  position: absolute;
+  top: 25vh;   /* ← DESCE */
+  right: 15vw;  /* ← POSIÇÃO LATERAL */
+}
+
+table {
+  background-color: #FAF6F6;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 30vw;
+}
+
+table, tr, td {
+  border-collapse: collapse;
+  padding: 15px;
+}
+
+table h1 {
+  text-align: center;
+  font-size: 35px;
+  color: #373638;
+}
+
+.form {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  position: relative;
+  right: 25vw;
+}
+
+.form h1 {
+  margin-top: 3vh;
+}
+
+p {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #373638;
+  position: relative;
+  left: 2.5vw;
+}
+
+.titulo {
+  margin-top: 30px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: 1px solid #2A3E85;
+  border-radius: 7px;
+  width: 21.5vw;
+  height: 2.3vh;
+  position: relative;
+  left: 2.5vw;
+}
+
+select, option {
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 7px;
+  margin-bottom: 10px;
+  position: relative;
+  left: 2.5vw;
+  width: 23vw;
+
+}
+
+input[type="submit"] {
+  font-family: "Poppins", sans-serif;
+  color: #2A3E85;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  border: 1px solid #2A3E85;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 23vw;
+  margin-bottom: 10px;
+}
+
+input[type="submit"]:hover {
+  background-color: #2A3E85;
+  color: rgb(255, 255, 255);
+  transition: 0.3s all;
+}
+
+a {
+  color: #2A3E85;
+  font-size: 15px;
+  margin-bottom: 30px; 
+  display: block;
+  text-align: center;
+}
+
+input[type="password"] {
+  padding: 10px;
+  border: 1px solid #2A3E85;
+  border-radius: 7px;
+  width: 21.5vw;
+  height: 2.3vh;
+  position: relative;
+  left: 2.5vw;
+}

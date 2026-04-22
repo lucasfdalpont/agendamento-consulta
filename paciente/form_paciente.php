@@ -1,0 +1,170 @@
+<?php
+//captura a especialidade passada pela URL
+$especialidade = $_GET['especialidade'] ?? 'Não informado';
+?>
+<html lang="pt-br">
+    <head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulário do paciente</title>
+        <link rel="stylesheet" href="estilo_paciente.css">
+    </head>
+    <body>
+  <div id="overlayMenu" class="overlayMenu"></div>
+ <header>
+    <div class="perfil" id="perfilBtn">
+    <img src="../imagens/perfil.png" width="40px" alt="Perfil">
+    </div>
+    <p class="form-paciente">Formulário do paciente</p>
+  </header>
+
+  <nav id="menuLateral" class="menu-lateral">
+  <div class="menu-header">
+    <img src="../imagens/perfilPNG.png" width="40px" alt="Perfil PNG" alt="Usuário" />
+  </div>
+  <ul>
+     <li><a href="../agendamento/pagina_inicial.php">Página inicial</a></li>
+    <li><a href="../especialidade/lista_especialidadeusuario.php">Especialidades</a></li>
+  </ul>
+  <div class="sair">
+    <img src="../imagens/sair.png" width="30px" alt="Sair" alt="Sair">
+    <a href="#" id="btnSair">Sair</a>
+  </div>
+</nav>
+        <main>
+            <form action="../paciente/cadastro_paciente.php" method="post">
+                <input type="hidden" name="especialidade" value="<?php echo $especialidade; ?>">
+                    <table align="center">
+                        <thead>
+                            <tr>
+                                <th class="preencha" colspan="2">Preencha o formulário</th>
+                            </tr>
+                        </thead>
+                            <pre>
+    </pre>
+                        <tbody>
+                            <tr>
+                                <th>Digite o seu nome completo</th>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="nome" placeholder="Digite o seu nome completo" required></td>
+                            </tr>
+
+                            <tr>
+                                <th>Selecione o seu sexo</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <select name="sexo" required>
+                                        <option value="M">Masculino</option>
+                                        <option value="F">Feminino</option>
+                                        <option value="O">Outro</option>
+                                </td>
+                            </tr>
+
+                        
+                            <tr>
+                                <th>Digite o nome da sua mãe</th>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="nome_mae" placeholder="Digite o nome da sua mãe" required></td>
+                            </tr>
+
+                            <tr>
+                                <th>Digite o telefone da sua mãe</th>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="telefone_mae" placeholder="Digite o telefone da sua mãe" required></td>
+                            </tr>
+
+                            <tr>
+                                <th>Digite a sua data de nascimento</th>
+                            </tr>
+                            <tr>
+                                <td><input type="date" name="data_nasc" required></td>
+                            </tr>
+
+                            <tr>
+                                <th>Digite o seu endereço</th>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="endereco" placeholder="Digite o seu endereço" required></td>
+                            </tr>
+
+                            <tr>
+                                <th>Digite o seu CPF</th>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="cpf" placeholder="Digite o seu CPF" required></td>
+                            </tr>
+
+                            <tr>
+                                <th>Digite o seu telefone</th>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="telefone" placeholder="Digite o seu telefone" required></td>
+                            </tr>
+
+                            <tr>
+                                <th>Digite o seu email</th>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="email" placeholder="Digite o seu email" required></td>
+                            </tr>
+
+                            <tr>
+                                <th class="label">Anexe o seu laudo</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="avatar"></label>
+                                    <input type="file" id="avatar" name="laudo" accept="image/png, image/jpeg" />
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td colspan="5" align="center">
+                                    <input type="submit" value="Cadastrar paciente">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </form>
+        </main>
+   <footer>
+    <div class="footer-container">
+      <img src="../imagens/apae.png" alt="Logo APAE" width="200" height="200">
+
+      <div class="footer-contato">
+        <h3>CONECTE-SE CONOSCO</h3>
+        <p><img src="../imagens/instituicao.png" alt="Instituição" width="40px" class="icone-instituicao"> APAE – Associação dos Pais e Amigos dos Excepcionais de Criciúma – SC</p>
+       <p><img src="../imagens/localizacao.png" alt="Localização" width="30px" class="icone-localizacao"> <a href="https://share.google/TCiTHP6GZTybb3aNS"> R. Imigrante de Luca, 600 – Pinheirinho, Criciúma – SC</a></p>
+      </div>
+
+      <div class="contato">
+        <div class="contato-item">
+          <img src="../imagens/telefone.png" alt="Telefone" width="50px">
+          <a href="tel:+554834381457">(48) 3438-1457</a>
+        </div>
+
+        <div class="contato-item">
+          <img src="../imagens/email.png" alt="Email">
+          <a href="mailto:apaecri@matrix.com.br">apaecri@matrix.com.br</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+    <div id="popupSair" class="popup-sair">
+    <div class="popup-conteudo">
+        <p>Deseja sair da conta?</p>
+        <div class="popup-botoes">
+            <button id="cancelarPopup" onclick="Cancelar()">Cancelar</button>
+            <button id="confirmarPopup" onclick="Sair()">Sair</button>
+        </div>
+    </div>
+</div>
+    <script src="script.js">
+       
+    </script>
+    </body>

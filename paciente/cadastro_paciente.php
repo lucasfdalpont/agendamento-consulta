@@ -1,0 +1,187 @@
+<?php
+
+include('conexao.php');
+
+$nome = $_POST['nome'];
+$sexo = $_POST['sexo'];
+$nome_mae = $_POST['nome_mae'];
+$telefone_mae = $_POST['telefone_mae'];
+$data_nasc = $_POST['data_nasc'];
+$endereco = $_POST['endereco'];
+$cpf = $_POST['cpf'];
+$especialidade = $_POST['especialidade'];
+$telefone = $_POST['telefone'];
+$email = $_POST['email'];
+$laudo = $_POST['laudo'];
+
+//função de validação do CPF 
+function validaCPF($cpf) {
+    $cpf = preg_replace('/[^0-9]/is', '', $cpf);
+
+    if (strlen($cpf) != 11) {
+        return false;
+    }
+
+    if (preg_match('/(\d)\1{10}/', $cpf)) {
+        return false;
+    }
+
+    for ($t = 9; $t < 11; $t++) {
+        $d = 0;
+        for ($c = 0; $c < $t; $c++) {
+            $d += (int)$cpf[$c] * (($t + 1) - $c);
+        }
+        $d = ((10 * $d) % 11) % 10;
+        //compara o dígito do CPF como inteiro
+        if ((int)$cpf[$t] !== $d) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+//validacao  e email
+$padrao_email = "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/";
+if (!preg_match($padrao_email, $email)) {
+    echo "<script language='javascript'>
+            alert('Insira um email válido.');
+            window.location.href='../paciente/form_paciente.php';
+        </script>";
+    exit;
+}
+
+//validação do CPF
+if (!validaCPF($cpf)) {
+    echo "<script>
+            alert('CPF inválido.');
+            window.location.href='../paciente/form_paciente.php';
+          </script>";
+    exit;
+}
+
+$sql = "INSERT INTO paciente (nome,sexo,nome_mae,telefone_mae,data_nasc,endereco,cpf,telefone,email,laudo)
+        VALUES ('".$nome."',
+                '".$sexo."',
+                '".$nome_mae."',
+                '".$telefone_mae."',
+                '".$data_nasc."',
+                 '".$endereco."',
+                '".$cpf."',
+                '".$telefone."',
+                '".$email."',
+                '".$laudo."')";
+
+$res = mysqli_query($id,$sql);
+
+if($res){
+    echo "<style>
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: linear-gradient(to right, #FAF6F6 30%,  #2A3E85 90%);
+        transition: background-color 1s ease;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+    }
+
+    .card {
+        background: #ffffff; /* Card branco */
+        padding: 30px 50px;
+        border-radius: 20px;
+        box-shadow: 0 4px 20px rgba(241, 128, 128, 0.25);
+        text-align: center;
+        animation: fadeIn 1s ease;
+    }
+
+    .card h2 {
+        color: #FDDC00; /* Azul do fundo */
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+
+    .card p {
+        color: #555; /* Cinza suave */
+        font-size: 0.95em;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+    }
+</style>
+
+<div class='card'>
+    <h2>Paciente cadastrado com sucesso</h2>
+    <p>Você será redirecionado em instantes...</p>
+</div>
+
+<script>
+    setTimeout(() => {
+        window.location.href = '../agendamento/form_agendamento.php?especialidade=$especialidade';
+        }, 3000);
+</script>";
+}else{
+    echo "<style>
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: linear-gradient(to right, #FAF6F6 30%,  #2A3E85 90%);
+        transition: background-color 1s ease;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+    }
+
+    .card {
+        background: #ffffff; /* Card branco */
+        padding: 30px 50px;
+        border-radius: 20px;
+        box-shadow: 0 4px 20px rgba(241, 128, 128, 0.25);
+        text-align: center;
+        animation: fadeIn 1s ease;
+    }
+
+    .card h2 {
+        color: #FDDC00; /* Azul do fundo */
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+
+    .card p {
+        color: #555; /* Cinza suave */
+        font-size: 0.95em;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+    }
+</style>
+
+<div class='card'>
+    <h2>Não foi possível cadastrar o paciente</h2>
+    <p>Tente novamente.</p>
+</div>
+
+<script>
+    setTimeout(() => {
+        window.location.href = 'form_paciente.php';
+    }, 9000);
+</script>";
+}
+
+?>

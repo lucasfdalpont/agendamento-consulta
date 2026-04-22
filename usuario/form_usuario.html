@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro</title>
+  <link rel="stylesheet" href="estilo_usuario.css">
+</head>
+<body>
+ <img class="logo_apae" src="../imagens/apae.png" alt="Logo APAE">
+  <div class="form"> 
+    <form action="cadastro.php" method="post">
+      <table>
+        <tr>
+          <td><h1>Cadastrar</h1></td>
+        </tr>
+
+          <tr>
+            <td><p>Digite o seu email</p>
+            <input type="text" name="email"></td>
+          </tr>
+        
+
+          <tr>
+            <td><p>Digite a sua senha</p>
+            <input type="password" name="senha"></td>
+          </tr>
+
+
+           <tr>
+            <td>
+                <p>Tipo</p>
+                <select name="tipo">
+                <option value="P">Paciente</option>
+                <option value="M">Medico</option>
+                 <option value="A">Administrador</option>
+           </td>
+          </tr>
+
+        
+        <tr>
+          <td style="text-align: center;"> <input type="submit"></td>
+        </tr>
+
+         <tr>
+          <td style="text-align: center;"><a href="form_entrar.html">Já tem uma conta? Faça login</a></td>
+        </tr>
+
+
+         </table>
+      </form>
+    </div>
+ 
+       
+   
+  
+</body>
+</html>

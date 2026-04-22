@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+header {
+    background-color: #2A3E85;
+    color: #FAF6F6;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header img {
+    margin-right: 20px;
+}
+
+.menu-lateral {
+    position: fixed;
+    left: -260px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #FAF6F6;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease;
+    z-index: 1000;
+    padding: 20px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.menu-lateral.aberto {
+    left: 0;
+}
+
+.menu-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+}
+
+.menu-header span {
+    font-weight: 500;
+    color: #373638;
+}
+
+.menu-header img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.menu-lateral ul {
+    list-style: none;
+    padding: 20px 0;
+}
+
+.menu-lateral li {
+    margin: 15px 0;
+}
+
+.menu-lateral a {
+    text-decoration: none;
+    color: #373638;
+    font-weight: 500;
+}
+
+.sair {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.sair a {
+    color: #000;
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+    left: 0.5vw;
+    bottom: 9px;
+}
+
+.overlayMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 999;
+}
+
+.overlayMenu.visivel {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lista {
+    margin-left: 37vw;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 160px auto 100px;
+    background-color: #FAF6F6;
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    border: 1.5px solid #2A3E85;
+    position: relative;
+    overflow-x: auto;
+}
+
+table td, table th {
+    max-width: 180px;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.container h2 {
+    text-align: center;
+    color: #373638;
+    font-weight: 600;
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1.5px solid #cfcfcf;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #FAF6F6;
+}
+
+a {
+    text-decoration: none;
+    color: #373638;
+}
+
+td {
+    color: #373638;
+    font-weight: 500;
+}
+
+th, td {
+    padding: 14px 12px;
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 15px;
+}
+
+th {
+    background-color: #f4efef;
+    font-weight: 500;
+    color: #373638;
+}
+
+td img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+td img:hover {
+    transform: scale(1.2);
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+footer {
+    background-color: #2A3E85;
+    color: #FAF6F6;
+    padding: 100px 50px;
+    margin-top: 10vh;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-contato h3 {
+    margin: 0 0 30px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.footer-contato p {
+    margin: 25px 0;
+    font-size: 1.099rem;
+}
+
+.footer-contato img {
+    position: relative;
+    top: 1.5vh;
+}
+
+.footer-contato a {
+    color: #FAF6F6;
+    text-decoration: none;
+}
+
+.contato {
+    margin-top: 13vh;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    font-size: 1.030rem;
+}
+
+.contato-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.030rem;
+}
+
+.contato-item img {
+    width: 20px;
+    height: 20px;
+}
+
+.contato-item a {
+    color: #FAF6F6;
+    text-decoration: none;
+    font-size: 1.030rem;
+}
+
+.contato-item a:hover {
+    text-decoration: underline;
+}
+
+.popup-sair {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.popup-conteudo {
+    background: #fff;
+    padding: 25px;
+    width: 300px;
+    border-radius: 12px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+.popup-conteudo p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.popup-botoes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.popup-botoes button {
+    width: 45%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+#cancelarPopup {
+     background: #b3b3b3;
+    font-family: Poppins;
+     font-weight: 500;
+     color: #373638;
+}
+
+#cancelarPopup:hover {
+     background: #fff;
+     color: #b3b3b3;
+     border: 1px solid #b3b3b3;
+    font-family: Poppins;
+     font-weight: 500;
+}
+
+#confirmarPopup {
+    background: #ff4747;
+    color: #fff;
+    font-family: Poppins;
+     font-weight: 500;
+     color: #373638;
+}
+
+#confirmarPopup:hover {
+    background:#fff;
+    border: 1px solid #ff4747;
+    color: #ff4747;
+    font-family: Poppins;
+     font-weight: 500;
+}
+
+#popupSair {
+     font-family: Poppins;
+     font-size: 24px;
+     font-weight: 600;
+     color: #373638;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+table tr {
+    height: 60px !important;
+}
+
+table td, table th {
+    padding: 14px 12px;
+    vertical-align: middle !important;
+    word-break: break-word;
+    white-space: normal;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0 8px; 
+}

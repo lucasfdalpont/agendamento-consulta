@@ -1,0 +1,442 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #FAF6F6;
+  opacity: 0;
+  animation: aparecer 1s ease forwards;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+header {
+  background-color: #2A3E85;
+  color: #FAF6F6;
+  padding: 30px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+header img {
+  margin-right: 20px;
+}
+
+.menu-lateral {
+  position: fixed;
+  left: -260px;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #fff8ec;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+  transition: left 0.3s ease;
+  z-index: 1000;
+  padding: 20px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.menu-lateral.aberto {
+  left: 0;
+}
+
+.menu-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 15px;
+}
+
+.menu-header span {
+  font-weight: 500;
+  color: #373638;
+}
+
+.menu-header img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.menu-lateral ul {
+  list-style: none;
+  padding: 20px 0;
+}
+
+.menu-lateral li {
+  margin: 15px 0;
+}
+
+.menu-lateral a {
+  text-decoration: none;
+  color: #373638;
+  font-weight: 500;
+}
+
+.sair {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.sair a {
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  left: 0.5vw;
+  bottom: 9px;
+}
+
+.overlayMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
+.overlayMenu.visivel {
+  opacity: 1;
+  visibility: visible;
+}
+
+.pagina-inicial {
+  font-weight: 500;
+  margin-left: 40vw;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  top: 7vh;
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: brightness(60%);
+}
+
+.tabela img {
+  position: relative;
+  left: 5vw;
+  top: 5.5vh;
+  width: 70px;
+  height: 70px;
+  margin-bottom: 55px;
+}
+
+.tabela h2 {
+  font-family: 'Poppins', sans-serif;
+  color: #373638;
+  font-size: 21px;
+  margin-bottom: 4px;
+}
+
+.image-container .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #2A3E85;
+  opacity: 0.5;
+}
+
+.conteudo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-73%, -50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40vw;
+  color: #FAF6F6;
+  z-index: 2;
+  text-align: left;
+}
+
+.conteudo h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  max-width: 600px;
+  position: relative;
+}
+
+.texto {
+  line-height: 1.4;
+}
+
+.agende {
+  color: #FAF6F6;
+}
+
+.destaque {
+  color: #FFD700;
+}
+
+h1 {
+  color: #373638;
+  font-weight: 600;
+  bottom: 2.7vh;
+  position: relative;
+}
+
+.atendimentos-oferecidos {
+  text-align: center;
+  margin-top: 18vh;
+  margin-bottom: 5vh;
+  font-size: 2rem;
+}
+
+.apae {
+  color: #FFD700;
+}
+
+.tabela {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  justify-items: center;
+  align-items: start;
+  margin: 0 auto;
+  max-width: 915px;
+  padding: 0 20px;
+}
+
+.tabela > div {
+  background-color: #fff;
+  border-radius: 15px;
+  width: 260px;
+  height: 260px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  padding: 25px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.tabela > div:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 8px 18px rgba(42, 62, 133, 0.25);
+}
+
+.tabela h2 {
+  color: #373638;
+  font-size: 22px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.tabela p {
+  color: #333;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.tabela a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.especialidade {
+  position: relative;
+}
+
+@media (max-width: 1200px) {
+  .tabela {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .tabela {
+    grid-template-columns: 1fr;
+  }
+  .tabela > div {
+    width: 90%;
+  }
+}
+
+footer {
+  background-color: #2A3E85;
+  color: #FAF6F6;
+  padding: 100px 50px;
+  margin-top: 10vh;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.footer-contato h3 {
+  margin: 0 0 30px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.footer-contato p {
+  margin: 25px 0;
+  font-size: 1.099rem;
+}
+
+.footer-contato img {
+  position: relative;
+  top: 1.5vh;
+}
+
+.footer-contato a {
+  color: #FAF6F6;
+  text-decoration: none;
+}
+
+.contato {
+  margin-top: 13vh;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  font-size: 1.030rem;
+}
+
+.contato-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.030rem;
+}
+
+.contato-item img {
+  width: 20px;
+  height: 20px;
+}
+
+.contato-item a {
+  color: #FAF6F6;
+  text-decoration: none;
+  font-size: 1.030rem;
+}
+
+.contato-item a:hover {
+  text-decoration: underline;
+}
+
+
+.popup-sair {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.popup-conteudo {
+    background: #fff;
+    padding: 25px;
+    width: 300px;
+    border-radius: 12px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+.popup-conteudo p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.popup-botoes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.popup-botoes button {
+    width: 45%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+#cancelarPopup {
+     background: #b3b3b3;
+    font-family: Poppins;
+     font-weight: 500;
+     color: #373638;
+}
+
+#cancelarPopup:hover {
+     background: #fff;
+     color: #b3b3b3;
+     border: 1px solid #b3b3b3;
+    font-family: Poppins;
+     font-weight: 500;
+}
+
+#confirmarPopup {
+    background: #ff4747;
+    color: #fff;
+    font-family: Poppins;
+     font-weight: 500;
+     color: #373638;
+}
+
+#confirmarPopup:hover {
+    background:#fff;
+    border: 1px solid #ff4747;
+    color: #ff4747;
+    font-family: Poppins;
+     font-weight: 500;
+}
+
+#popupSair {
+     font-family: Poppins;
+     font-size: 24px;
+     font-weight: 600;
+     color: #373638;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}

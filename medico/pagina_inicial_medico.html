@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <link rel="stylesheet" href="estilo_iniciomedico.css">
+</head>
+<body>
+    <div id="overlayMenu" class="overlayMenu"></div>
+
+    <header>
+        <div class="perfil" id="perfilBtn">
+            <img src="../imagens/perfil.png" width="40px" alt="Perfil">
+        </div>
+        <p class="pagina-inicial">Página inicial</p>
+    </header>
+
+    <nav id="menuLateral" class="menu-lateral">
+        <div class="menu-header">
+            <img src="../imagens/perfilPNG.png" width="40px" alt="Perfil PNG" alt="Usuário" />
+        </div>
+        <ul>
+            <li><a href="../medico/pagina_inicial_medico.html">Página inicial</a></li>
+             <li><a href="../consulta/form_consulta.php">Cadastro de consulta</a></li>
+            <li><a href="../agendamento/lista_agendamento.php">Agendamentos</a></li>
+            <li><a href="../paciente/lista_pacienteusuario.php">Pacientes</a></li>
+            <li><a href="../consulta/lista_consultausuario.php">Consultas</a></li>
+        </ul>
+        <div class="sair">
+            <img src="../imagens/sair.png" width="30px" alt="Sair" alt="Sair">
+           <a href="#" id="btnSair">Sair</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="image-container">
+            <img src="../imagens/foto.jpg" alt="Foto APAE">
+            <div class="overlay"></div>
+            <div class="conteudo">
+                <div class="texto">
+                    <h1>
+                        <span style="color:#FAF6F6;" class="agende">Bem vindo,<br></span>
+                        <span class="destaque">Médico</span>
+                    </h1>
+                </div>
+                <img src="../imagens/apae.png" alt="Logo APAE" class="logo-apae">
+            </div>
+        </div>
+
+        <h1 class="atendimentos-oferecidos">Acesse as informações <span class="abaixo">abaixo:</span></h1>
+
+        <div class="tabela">
+            <div class="cadastro">
+                <img src="../imagens/consulta.png" alt="Ícone Agendamento">
+                <a href="../consulta/form_consulta.php"><h2>Cadastro de <br>consultas</h2></a>
+            </div>
+
+            <div class="paciente">
+                <img src="../imagens/paciente.png" alt="Ícone Paciente">
+                <a href="../paciente/lista_pacientes.php"><h2>Pacientes</h2></a>
+            </div>
+
+            <div class="consulta">
+                <img src="../imagens/consulta.png" alt="Ícone Consulta">
+                <a href="../consulta/lista_consulta.php"><h2>Consultas</h2></a>
+            </div>
+
+            <div class="agendamento">
+             <div class="agendamento">
+                <img src="../imagens/agendamento.png" alt="Ícone Agendamento">
+                <a href="../agendamento/lista_agendamento.php"><h2>Agendamentos</h2></a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <img src="../imagens/apae.png" alt="Logo APAE" width="200" height="200">
+            <div class="footer-contato">
+                <h3>CONECTE-SE CONOSCO</h3>
+                <p><img src="../imagens/instituicao.png" alt="Instituição" width="40px" class="icone-instituicao"> APAE – Associação dos Pais e Amigos dos Excepcionais de Criciúma – SC</p>
+                <p><img src="../imagens/localizacao.png" alt="Localização" width="30px" class="icone-localizacao"> <a style="color:  #FAF6F6" href="https://share.google/TCiTHP6GZTybb3aNS"> R. Imigrante de Luca, 600 – Pinheirinho, Criciúma – SC</a></p>
+            </div>
+            <div class="contato">
+                <div class="contato-item">
+                    <img src="../imagens/telefone.png" alt="Telefone" width="50px">
+                    <a href="tel:+554834381457">(48) 3438-1457</a>
+                </div>
+                <div class="contato-item">
+                    <img src="../imagens/email.png" alt="Email">
+                    <a href="mailto:apaecri@matrix.com.br">apaecri@matrix.com.br</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+             <div id="popupSair" class="popup-sair">
+    <div class="popup-conteudo">
+        <p>Deseja sair da conta?</p>
+        <div class="popup-botoes">
+            <button id="cancelarPopup" onclick="Cancelar()">Cancelar</button>
+            <button id="confirmarPopup" onclick="Sair()">Sair</button>
+        </div>
+    </div>
+</div>
+    <script src="script.js">
+  
+    </script>
+</body>
+</html>
